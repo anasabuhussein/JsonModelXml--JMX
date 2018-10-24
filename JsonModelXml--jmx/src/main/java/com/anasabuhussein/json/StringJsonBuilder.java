@@ -67,15 +67,13 @@ public class StringJsonBuilder {
 
 		while (index < input.length()) {
 
-			int c = input.charAt(index);
+			int c = getChars();
 
-			if (c == ' ')
-				index++;
-
-			c = input.charAt(index);
-
-			if (c == ']' || c == 13 )
+			if (c == ']') {
 				return arrayObject;
+			} else {
+				--index;
+			}
 
 			if (c == ',')
 				getChars();
