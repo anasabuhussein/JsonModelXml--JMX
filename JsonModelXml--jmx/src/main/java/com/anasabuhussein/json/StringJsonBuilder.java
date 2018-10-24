@@ -74,7 +74,7 @@ public class StringJsonBuilder {
 
 			c = input.charAt(index);
 
-			if (c == ']')
+			if (c == ']' || c == 13 )
 				return arrayObject;
 
 			if (c == ',')
