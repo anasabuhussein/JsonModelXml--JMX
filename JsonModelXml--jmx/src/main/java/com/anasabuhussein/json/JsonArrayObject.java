@@ -49,9 +49,9 @@ public class JsonArrayObject<T> extends ObjectList<T> {
 	 * 
 	 * @see StringJsonBuilder
 	 **/
-	public static JsonArrayObject<?> fromString(String jsonArrayObject) throws JsonException {
+	public static JsonArrayObject<Object> fromString(String jsonArrayObject) throws JsonException {
 		StringJsonBuilder builder = new StringJsonBuilder(jsonArrayObject);
-		return (JsonArrayObject<?>) builder.nextValue();
+		return (JsonArrayObject<Object>) builder.nextValue();
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class JsonArrayObject<T> extends ObjectList<T> {
 	 * @see ModelObjectJsonArray
 	 **/
 	@SuppressWarnings("unchecked")
-	public static JsonArrayObject<?> fromModel(List<?> objectsList)
+	public static JsonArrayObject<Object> fromModel(List<Object> objectsList)
 			throws IllegalAccessException, InvocationTargetException, JsonException, ModelConvertorExceptions {
 		ModelObjectJsonArray modelObjectJsonArray = new ModelObjectJsonArray();
 		return modelObjectJsonArray.createJsonArray((List<Object>) objectsList);
