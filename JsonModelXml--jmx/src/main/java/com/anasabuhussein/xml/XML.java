@@ -49,7 +49,7 @@ public class XML {
 			throws InstantiationException, IllegalAccessException, JAXBException, InvocationTargetException,
 			JsonException, NoSuchFieldException, ModelConvertorExceptions {
 		// from xml to object
-		Object object = toObject(input, class1);
+		Object object = toModel(input, class1);
 
 		// from object to json;
 		return JsonObject.fromModel(object);
@@ -58,7 +58,7 @@ public class XML {
 	/**
 	 * This will convert from String to model object.
 	 **/
-	public static Object toObject(String iString, Class<?> class1)
+	public static Object toModel(String iString, Class<?> class1)
 			throws JAXBException, InstantiationException, IllegalAccessException {
 
 		StringReader sr = new StringReader(iString);
